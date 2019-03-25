@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Queue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Dish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Mensaschafe_klein.png" type="Texture" id=3]
 
 [node name="Mensa" type="Node2D"]
 
@@ -131,4 +132,9 @@ _number = 3
 _name = "Älpler Maggerone mit Appenzeller Käse (Rohmilchkäse)überbacken, dazu Apfelmus und Tessiner Mischsalat"
 _ingredients = [ "Milch", "Gluten" ]
 _number = 4
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 934.772, 672.567 )
+scale = Vector2( 1.02628, 0.958102 )
+texture = ExtResource( 3 )
 
