@@ -1,0 +1,31 @@
+[gd_scene format=2]
+
+[node name="Mensa" type="Node2D"]
+
+[node name="Dishes" type="Node2D" parent="."]
+
+[node name="Dish4" type="ColorRect" parent="Dishes"]
+margin_left = 21.1822
+margin_top = 200.545
+margin_right = 38.1822
+margin_bottom = 228.545
+rect_scale = Vector2( 12.73, 5.76677 )
+
+[node name="Dish3" type="ColorRect" parent="Dishes"]
+margin_left = 252.0
+margin_top = 52.0
+margin_right = 465.0
+margin_bottom = 202.0
+
+[node name="Dish2" type="ColorRect" parent="Dishes"]
+margin_left = 547.0
+margin_top = 50.0
+margin_right = 760.0
+margin_bottom = 204.0
+
+[node name="Dish1" type="ColorRect" parent="Dishes"]
+margin_left = 806.273
+margin_top = 228.273
+margin_right = 1001.27
+margin_bottom = 364.273
+

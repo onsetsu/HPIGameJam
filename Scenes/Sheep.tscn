@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="Sheep" type="Node2D"]
+
+[node name="body" type="ColorRect" parent="."]
+margin_left = -19.0
+margin_top = -19.95
+margin_right = 21.0
+margin_bottom = 20.05
+color = Color( 0.901961, 0.615686, 0.0666667, 1 )
+
+[node name="head" type="ColorRect" parent="."]
+margin_left = -9.5
+margin_top = -41.8
+margin_right = 30.5
+margin_bottom = -1.79999
+rect_scale = Vector2( 0.542294, 0.542294 )
+color = Color( 0.980392, 0.666667, 0.0666667, 1 )
+

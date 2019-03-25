@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="Person" type="Node2D"]
+
+[node name="body" type="ColorRect" parent="."]
+margin_left = -19.0
+margin_top = -19.0
+margin_right = 21.0
+margin_bottom = 21.0
+
+[node name="head" type="ColorRect" parent="."]
+margin_left = -9.5
+margin_top = -35.9
+margin_right = 11.5
+margin_bottom = -18.9
+
