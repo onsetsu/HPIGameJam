@@ -22,12 +22,3 @@ color = Color( 0.196078, 0.435294, 0.109804, 1 )
 [node name="path" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="path"]
-position = Vector2( 404.838, 508.135 )
-rotation = -2.27306
-
-[node name="PathFollow2D2" type="PathFollow2D" parent="path"]
-position = Vector2( 423.862, 181.153 )
-rotation = -2.17293
-offset = 354.4
-
