@@ -1,0 +1,84 @@
+Erdnüsse
+Gluten
+Rindfleisch
+Schweinefleisch
+Fisch
+Milch
+Geflügel
+Rosenkohl
+Curry
+Ei
+Alkohol
+Knoblauch
+Pilze
+Senf
+Soja
+
+1 Tofugulasch mit Paprikastreifen, dazu Nudeln
+	Gluten, Soja
+
+1 Wurstgulasch mit Paprikastreifen, dazu Nudeln
+	Gluten, Schweinefleisch, Senf
+
+2 Hähnchengeschnetzeltes Züricher Art, dazu junge Erbsen und Röstiecken
+	Milch, Geflügel, Alkohol
+
+3 Matjesfilets mit Dillschmand, dazu Bratkartoffeln und Gurkensalat
+	Fisch, Schweinefleisch, Milch
+
+4 Süßkartoffel-Curry mit Kichererbsen und Blattspinat, dazu Basmatireis
+	Knoblauch, Curry, Erdnüsse, Soja
+
+1 Gemüseeintopf mit Kichererbsen, dazu Brot
+	Gluten, Knoblauch, Pilze
+
+1 Topfwurst mit buntem Sauerkraut und Salzkartoffeln
+	Schweinefleisch, Gluten
+
+2 Schweinenackenbraten mit Rosenkohl und Semmelknödeln
+	Schweinefleisch, Rosenkohl, Gluten, Ei, Milch
+
+3 Seelachs in Kräuter-Ei-Hülle auf Dänischer Senfsauce mit Tricolore-Gemüse und Kartoffelgratin
+	Fisch, Ei, Senf, Milch, Gluten
+
+4 Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsalatvariation
+	Milch, Ei, Senf, Gluten, Soja
+
+1 Hefeklöße mit Waldbeeren oder Zimtpflaumen
+	Ei, Milch, Gluten
+
+2 Hering nach Hausfrauen Art mit Salzkartoffeln und Gurkensalat
+	Fisch, Ei, Milch, Senf
+
+3 Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi
+	Schweinefleisch, Milch, Gluten, Eier, Pilze
+
+4 Gelbe Linsen mit Kokos-Curry und Bananen-Soja-Shake
+	Soja, Knoblauch, Curry
+
+1 Spaghetti mit Florentiner Sauce
+	Knoblauch, Gluten, Soja
+
+2 Vegetarische Klopse mit Möhrengemüse und Salzkartoffeln
+	Ei, Soja, Gluten, Pilze
+
+2 Königsberger Klopse mit Möhrengemüse und Langkornreis
+	Schweinefleisch, Rindfleisch, Gluten, Ei, Senf, Fisch
+
+3 Fangfrisches Fischfilet mit Orangen-Pfeffersauce und Fenchel-Tomaten-Gemüse, dazu Bandnudeln
+	Fisch, Gluten, Milch, Ei, Alkohol
+
+4 Frühlingsrolle auf asiatischem Gemüse mit Mango-Chutney und scharfem Kokosreis
+	Knoblauch, Ei, Soja, Milch, Gluten, Senf
+
+1 Brühnudeln mit Wurzelgemüse und Sojawürfeln, dazu Brot
+	Gluten, Soja, Pilze
+
+2 Hähnchenbruststreifen in Honig-Senf-Sauce mit Mandel-Kartoffeln, dazu Salatmix mit Mandarinen-Joghurt-Dressing
+	Senf, Milch, Erdnüsse, Geflügel
+
+3 Gulasch mit Rosenkohl und Semmelknödeln oder Spätzle
+	Schweinefleisch, Rindfleisch, Knoblauch, Alkohol, Gluten, Ei, Milch, Rosenkohl
+
+4 Älpler Maggerone mit Appenzeller Käse (Rohmilchkäse)überbacken, dazu Apfelmus und Tessiner Mischsalat
+	Milch, Gluten
