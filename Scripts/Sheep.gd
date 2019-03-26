@@ -18,7 +18,7 @@ enum PATTERN{
 	stripes,
 	none
 }
-var pattern
+var pattern_type
 
 enum HEAD_COLOR{
 	black,
@@ -29,6 +29,11 @@ var head_color
 
 func _ready():
     pass
+
+func set_appearance(head, fur, pattern):
+    head_color = head
+    fur_color = fur
+    pattern_type = pattern
 
 func group_size(name):
     return get_tree().get_nodes_in_group(name).size()
