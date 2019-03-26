@@ -13,7 +13,8 @@ func _init(name=null, ingredients = [], number = 0):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	pass # Replace with function body.
+	if _number == 5: 
+		$ingredients.hide()
 
 func _process(delta):
 	if _number == 5: 
@@ -23,3 +24,11 @@ func _process(delta):
 
 func _on_button_pressed():
     Mensa.select_dish(self)
+
+func print_ingredients():
+	
+	for ingredient in _ingredients:
+		var l = Label.new()
+		l.text = ingredient
+		$ingredients/VBoxContainer.add_child(l)
+	
