@@ -11,8 +11,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
-		Mensa.hide_details()
+    pass
+#	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
+#		Mensa.click_background()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

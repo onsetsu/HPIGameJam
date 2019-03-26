@@ -60,6 +60,7 @@ func _process(delta):
 		$dish_node/assigned_dish.text = '?'
 
 func end_reached():
+    Mensa.unselected_sheep(self)
     Mensa.check(self)
 
 func success_anim():

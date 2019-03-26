@@ -14,7 +14,6 @@ func _ready():
 func setup_dishes():
     var all_dishes = $more_dishes.get_children().duplicate()
     for dish in all_dishes:
-        print(dish._ingredients.size())
         dish.print_ingredients()
     all_dishes.shuffle()
     
@@ -22,7 +21,6 @@ func setup_dishes():
     for dish in all_dishes:
         if not selected_dishes[dish._number - 1]:
             selected_dishes[dish._number - 1] = dish
-            print('selected a dish')
     
     var ulf = $dishes.get_children()[0]
     $dishes.remove_child(ulf)
@@ -47,7 +45,8 @@ func _process(delta):
 # ------------------------------------------------------------------------
 
 func clicked_on_sheep(sheep):
-	selected_sheep(sheep)
+    unselected_sheep(hungry_sheep)
+    selected_sheep(sheep)
 
 func hovering_over_sheep(sheep):
 	pass
@@ -62,14 +61,16 @@ func hide_details():
     $details.hide()
 
 func selected_sheep(sheep):
+    print('WORKS')
     hungry_sheep = sheep
     show_details(sheep)
 
 func unselected_sheep(sheep):
+    print('deselect')
     if hungry_sheep == sheep:
         hungry_sheep = null
         hide_details()
-
+  
 # assign dish
 # -------------------------------------------------------------------------
 func select_dish(dish):
