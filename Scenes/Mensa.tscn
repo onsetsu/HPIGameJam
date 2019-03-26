@@ -79,7 +79,7 @@ _number = 2
 
 [node name="Schweinesteak" parent="." instance=ExtResource( 2 )]
 _name = "Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi"
-_ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Eier", "Pilze" ]
+_ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Ei", "Pilze" ]
 _number = 3
 
 [node name="Gelbe Linsen" parent="." instance=ExtResource( 2 )]
