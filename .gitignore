@@ -1,4 +1,4 @@
-
+﻿
 # Godot-specific ignores
 .import/
 export.cfg
@@ -6,13 +6,4 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
-/Sprites/Kopf_rosa.png.import
-/Sprites/Kopf_schwarz.png.import
-/Sprites/Kopf_weiss.png.import
-/Sprites/Körper_blau.png.import
-/Sprites/Körper_gruen.png.import
-/Sprites/Körper_orange.png.import
-/Sprites/Schafmuster_Karo.png.import
-/Sprites/Schafmuster_Punkte.png.import
-/Sprites/Schafmuster_Streifen.png.import
-/Sprites/someGuy.png.import
+/Sprites/*.png.import
