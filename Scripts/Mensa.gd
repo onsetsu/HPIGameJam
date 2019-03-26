@@ -55,11 +55,22 @@ func check(sheep):
     _check(sheep, dishes[sheep.assigned_dish - 1], dishes)
     
 func _check(sheep, dish, all_dishes):
+	if dish._number == 5:    # Ulf selected: check if any other dish suitable 
+		for d in all_dishes:
+			if d._number != 5:  
+				if _dish_suitable(sheep, d):    # if yes: fail check
+					failure(sheep)
+					return
+	else:    # normal dish selected: check ingredients normally
+		if not _dish_suitable(sheep, dish):
+			failure(sheep)
+	success(sheep)
+
+func _dish_suitable(sheep, dish):
 	for ingredient in dish._ingredients:
 		if not ingredients_scene.can_be_eaten(sheep, ingredient):
-			failure(sheep)
-			return
-	success(sheep)
+			return false
+	return true
 
 func success(sheep):
     print('What a happy sheep!')
