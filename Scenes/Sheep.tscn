@@ -27,6 +27,7 @@ rect_scale = Vector2( 0.542294, 0.542294 )
 color = Color( 0.964706, 0.819608, 0.537255, 1 )
 
 [node name="assigned_dish" type="Label" parent="."]
+show_behind_parent = true
 margin_left = 37.9526
 margin_top = -79.9902
 margin_right = 77.9526

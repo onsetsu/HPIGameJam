@@ -52,15 +52,18 @@ func group_size(name):
     return get_tree().get_nodes_in_group(name).size()
 
 func _process(delta):
-    $body.color = Color(1,0,0)
+	$body.color = Color(1,0,0)
 
-    if assigned_dish:
-        $assigned_dish.text = str(assigned_dish)
-    else:
-        $assigned_dish.text = '?'
+	if assigned_dish: 
+		if assigned_dish == 5:
+			$assigned_dish.text = 'U'
+		else: 
+			$assigned_dish.text = str(assigned_dish)
+	else:
+		$assigned_dish.text = '?'
     
-    if not released:
-        interact()
+	if not released:
+		interact()
 
 func interact():
     if is_in_group('hovered'):
