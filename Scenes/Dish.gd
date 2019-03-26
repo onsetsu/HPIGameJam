@@ -13,6 +13,5 @@ func _init(name=null, ingredients = [], number = 0):
 func _ready():	
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+    $button.text = 'Essen ' + str(_number) + ': ' + _name

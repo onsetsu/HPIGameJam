@@ -13,4 +13,5 @@ func _ready():
 #    pass
 
 func end_reached():
-    queue_free()
+    pass
+    #queue_free()

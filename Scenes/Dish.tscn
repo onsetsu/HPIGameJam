@@ -1,20 +1,12 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Dish.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Ingredients.gd" type="Script" id=1]
 
 [node name="Dish" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
+[node name="button" type="Button" parent="."]
+margin_right = 61.0
 margin_bottom = 20.0
-
-[node name="Label" type="Label" parent="."]
-margin_left = -32.5789
-margin_top = 22.1053
-margin_right = 38.4211
-margin_bottom = 36.1053
-text = "Dish Name"
+text = "Essen 1"
 

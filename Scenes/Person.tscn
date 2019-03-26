@@ -10,10 +10,12 @@ margin_left = -19.0
 margin_top = -19.0
 margin_right = 21.0
 margin_bottom = 21.0
+color = Color( 0.262745, 0.0509804, 0.792157, 1 )
 
 [node name="head" type="ColorRect" parent="."]
 margin_left = -9.5
 margin_top = -35.9
 margin_right = 11.5
 margin_bottom = -18.9
+color = Color( 0.603922, 0.482353, 0.286275, 1 )
 
