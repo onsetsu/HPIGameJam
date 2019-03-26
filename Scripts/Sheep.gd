@@ -53,14 +53,21 @@ func group_size(name):
 func _process(delta):
 	if assigned_dish: 
 		if assigned_dish == 5:
-			$assigned_dish.text = 'U'
+			$dish_node/assigned_dish.text = 'U'
 		else: 
-			$assigned_dish.text = str(assigned_dish)
+			$dish_node/assigned_dish.text = str(assigned_dish)
 	else:
-		$assigned_dish.text = '?'
+		$dish_node/assigned_dish.text = '?'
 
 func end_reached():
     Mensa.check(self)
+
+func success_anim():
+    $graphic.play_success(self)
+func failure_anim():
+    $graphic.play_failure(self)
+func __anim_finished__(unused):
+    queue_free()
 
 func assign_dish(dish):
     assigned_dish = dish._number

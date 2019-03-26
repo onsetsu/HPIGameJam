@@ -58,3 +58,11 @@ func display(sheep):
         $body/pattern/none.hide()
     else:
         $body/pattern/none.show()
+
+func play_success(sheep):
+    $anim_player.play("success")
+    $anim_player.connect("animation_finished", sheep, "__anim_finished__")
+
+func play_failure(sheep):
+    $anim_player.play("failure")
+    $anim_player.connect("animation_finished", sheep, "__anim_finished__")

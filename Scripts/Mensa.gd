@@ -1,17 +1,44 @@
 extends Node2D
 
+var happy_sheeps = 0
+var sad_sheeps = 0
+const lives = 3
+
 var hungry_sheep
 var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
 
 func _ready():
+    setup_dishes()
     hide_details()
 
-func _process(delta):
-    pass
+func setup_dishes():
+    var all_dishes = $more_dishes.get_children().duplicate()
+    all_dishes.shuffle()
+    
+    var selected_dishes = [false, false, false, false]
+    for dish in all_dishes:
+        if not selected_dishes[dish._number - 1]:
+            selected_dishes[dish._number - 1] = dish
+            print('selected a dish')
+    
+    var ulf = $dishes.get_children()[0]
+    $dishes.remove_child(ulf)
 
-func _draw():
-	print('draw')
-	draw_line(Vector2(2,2), Vector2(200, 200), Color(255,0,0), 10, true)
+    var offset = Vector2(0, 50)
+    var i = 0  
+    for dish in selected_dishes:
+        dish.get_parent().remove_child(dish)
+        $dishes.add_child(dish)
+        dish.position = offset * i
+        i += 1
+
+    $dishes.add_child(ulf)
+
+func _process(delta): 
+	$points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps' 
+	$points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
+	if $end_point/Queue.is_empty():
+		get_tree().change_scene("res://Scenes/Success_End.tscn")
 
 # sheep events
 # ------------------------------------------------------------------------
@@ -87,7 +114,13 @@ func _dish_suitable(sheep, dish):
 	return true
 
 func success(sheep):
+    happy_sheeps += 1
+    sheep.success_anim()
     print('What a happy sheep!')
 
 func failure(sheep):
-    print('Oh no! Your sheep died.')
+	sad_sheeps += 1
+	sheep.failure_anim()
+	print('Oh no! Your sheep died.')
+	if sad_sheeps >= lives:
+		get_tree().change_scene("res://Scenes/Failure_End.tscn")

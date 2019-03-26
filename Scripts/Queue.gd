@@ -8,9 +8,11 @@ onready var Mensa = get_tree().get_root().get_node('Mensa')
 export var speed = 30
 
 var path_length
+var queue_start = false
 
 func _ready():
     path_length = $path.curve.get_baked_length()
+    $Timer.start()
     spawn_wave()
 
 func spawn_wave():
@@ -31,12 +33,20 @@ func spawn_wave():
         follow.add_child(entity)
     
 func _process(delta):
-    for follow_path in $path.get_children():
-        follow_path.offset += speed * delta
-        if follow_path.offset > path_length:
-            var person = follow_path.get_children()[0]
-            
-            Mensa.reparent_finished_person(person)
-            
-            person.end_reached()
-            follow_path.queue_free()
+	if queue_start:
+	    for follow_path in $path.get_children():
+	        follow_path.offset += speed * delta
+	        if follow_path.offset > path_length:
+	            var person = follow_path.get_children()[0]
+	            
+	            Mensa.reparent_finished_person(person)
+	            
+	            person.end_reached()
+	            follow_path.queue_free()
+
+
+func _on_Timer_timeout():
+	queue_start = true 
+	
+func is_empty():
+	return $path.get_children().empty()

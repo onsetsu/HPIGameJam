@@ -1,21 +1,62 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Person.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/someGuy.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -8.184 ), Vector2( 0, -12.8996 ), Vector2( 0, -8.184 ), Vector2( -0.277389, -5.96488 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.0422239, 0.0422239 ), Vector2( 0.0395308, 0.0422239 ), Vector2( 0.0422239, 0.0422239 ), Vector2( 0.045, 0.042 ) ]
+}
 
 [node name="Person" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="body" type="ColorRect" parent="."]
-margin_left = -19.0
-margin_top = -19.0
-margin_right = 21.0
-margin_bottom = 21.0
-color = Color( 0.262745, 0.0509804, 0.792157, 1 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8.184 )
+scale = Vector2( 0.0422239, 0.0422239 )
+texture = ExtResource( 2 )
 
-[node name="head" type="ColorRect" parent="."]
-margin_left = -9.5
-margin_top = -35.9
-margin_right = 11.5
-margin_bottom = -18.9
-color = Color( 0.603922, 0.482353, 0.286275, 1 )
+[node name="anim_player" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/end = SubResource( 2 )
+anims/idle = SubResource( 1 )
 
