@@ -10,8 +10,8 @@
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 512.642, 321.915 )
-scale = Vector2( 0.534965, 0.499426 )
+position = Vector2( 510, 321.915 )
+scale = Vector2( 0.550162, 0.499426 )
 texture = ExtResource( 2 )
 
 [node name="dishes" type="Node2D" parent="."]
@@ -46,7 +46,7 @@ _name = "Ulf's Café"
 _number = 5
 
 [node name="end_point" type="Node2D" parent="."]
-position = Vector2( 219.872, 255.649 )
+position = Vector2( 210.824, 235.543 )
 __meta__ = {
 "_edit_group_": true
 }
