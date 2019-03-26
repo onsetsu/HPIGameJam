@@ -19,6 +19,11 @@ config/name="MensaSheepSimulator"
 run/main_scene="res://Scenes/Mensa.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [input]
 
 click={
