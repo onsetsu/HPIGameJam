@@ -56,11 +56,11 @@ func _process(delta):
 
 	if assigned_dish: 
 		if assigned_dish == 5:
-			$assigned_dish.text = 'U'
+			$dish_node/assigned_dish.text = 'U'
 		else: 
-			$assigned_dish.text = str(assigned_dish)
+			$dish_node/assigned_dish.text = str(assigned_dish)
 	else:
-		$assigned_dish.text = '?'
+		$dish_node/assigned_dish.text = '?'
     
 	if not released:
 		interact()
