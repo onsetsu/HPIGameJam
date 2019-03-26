@@ -26,12 +26,14 @@ margin_bottom = -1.79999
 rect_scale = Vector2( 0.542294, 0.542294 )
 color = Color( 0.964706, 0.819608, 0.537255, 1 )
 
-[node name="assigned_dish" type="Label" parent="."]
+[node name="dish_node" type="Node2D" parent="."]
+position = Vector2( 26.0924, -61.0766 )
+z_index = 1
+
+[node name="assigned_dish" type="Label" parent="dish_node"]
 show_behind_parent = true
-margin_left = 37.9526
-margin_top = -79.9902
-margin_right = 77.9526
-margin_bottom = -40.9902
+margin_right = 40.0
+margin_bottom = 39.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.705882, 0.882353, 0.0784314, 1 )
 text = "?"
