@@ -5,6 +5,28 @@ onready var Mensa = get_tree().get_root().get_node('Mensa')
 var assigned_dish
 var released = false
 
+enum FUR_COLOR{
+	green,
+	blue,
+	orange
+}
+var fur_color
+
+enum PATTERN{
+	checkers,
+	dots,
+	stripes,
+	none
+}
+var pattern
+
+enum HEAD_COLOR{
+	black,
+	white,
+	pink
+}
+var head_color
+
 func _ready():
     pass
 
