@@ -3,7 +3,7 @@
 [ext_resource path="res://fonts/ShadowsIntoLight.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 80
+size = 70
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
