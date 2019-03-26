@@ -13,5 +13,8 @@ func _ready():
 #    pass
 
 func end_reached():
-    pass
-    #queue_free()
+    $anim_player.play("end")
+    $anim_player.connect("animation_finished", self, "__anim_finished__")
+
+func __anim_finished__(__unused__):
+    queue_free()
