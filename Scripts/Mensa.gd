@@ -9,6 +9,19 @@ func _ready():
 func _process(delta):
     pass
 
+func _draw():
+	print('draw')
+	draw_line(Vector2(2,2), Vector2(200, 200), Color(255,0,0), 10, true)
+
+# sheep events
+# ------------------------------------------------------------------------
+
+func clicked_on_sheep(sheep):
+	selected_sheep(sheep)
+
+func hovering_over_sheep(sheep):
+	pass
+
 # show details
 # -------------------------------------------------------------------------
 func show_details(sheep):

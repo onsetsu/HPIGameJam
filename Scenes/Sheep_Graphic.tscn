@@ -78,7 +78,7 @@ script = ExtResource( 1 )
 
 [node name="body" type="Node2D" parent="."]
 editor/display_folded = true
-position = Vector2( -21.7323, 90.1254 )
+position = Vector2( -20, 90 )
 rotation = -0.000161059
 scale = Vector2( 1.09528, 1.00471 )
 __meta__ = {
