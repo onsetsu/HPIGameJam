@@ -64,6 +64,7 @@ func _check(sheep, dish, all_dishes):
 	else:    # normal dish selected: check ingredients normally
 		if not _dish_suitable(sheep, dish):
 			failure(sheep)
+			return
 	success(sheep)
 
 func _dish_suitable(sheep, dish):
