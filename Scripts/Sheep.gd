@@ -92,7 +92,8 @@ func clear_select():
         sheep.unselect()
 
 func unselect():
-    remove_from_group('selected')
+    if is_in_group('selected'):
+        remove_from_group('selected')
     Mensa.unselected_sheep(self)
 
 func is_hovered():
@@ -107,7 +108,13 @@ func end_reached():
 
     unselect()
     Mensa.check(self)
-    #queue_free()
+
+func success_anim():
+    $graphic.play_success(self)
+func failure_anim():
+    $graphic.play_failure(self)
+func __anim_finished__(unused):
+    queue_free()
 
 func assign_dish(dish):
     assigned_dish = dish._number
