@@ -1,46 +1,47 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Mensa.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mensaschafe_klein.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Dish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Queue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Sheep_Details.tscn" type="PackedScene" id=5]
 
 [node name="Mensa" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 934.772, 672.567 )
-scale = Vector2( 1.02628, 0.958102 )
+position = Vector2( 512.642, 321.915 )
+scale = Vector2( 0.534965, 0.499426 )
 texture = ExtResource( 2 )
 
 [node name="dishes" type="Node2D" parent="."]
-position = Vector2( 578.279, 170.405 )
+position = Vector2( 314.366, 50.692 )
 
 [node name="Tofugulasch" parent="dishes" instance=ExtResource( 3 )]
 _name = "Tofugulasch mit Paprikastreifen, dazu Nudeln"
 _ingredients = [ "Gluten", "Soja" ]
 _number = 1
 
-[node name="Frühlingsrolle" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 2.86401, 88.7824 )
-_name = "Frühlingsrolle auf asiatischem Gemüse mit Mango-Chutney und scharfem Kokosreis"
-_ingredients = [ "Knoblauch", "Ei", "Soja", "Milch", "Gluten", "Senf" ]
-_number = 4
+[node name="Schweinenackenbraten" parent="dishes" instance=ExtResource( 3 )]
+position = Vector2( 0, 53.3404 )
+_name = "Schweinenackenbraten mit Rosenkohl und Semmelknödeln"
+_ingredients = [ "Schweinefleisch", "Rosenkohl", "Gluten", "Ei", "Milch" ]
+_number = 2
 
 [node name="Schweinesteak" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 1.43188, 194.748 )
+position = Vector2( 0.0714674, 104.963 )
 _name = "Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi"
 _ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Eier", "Pilze" ]
 _number = 3
 
 [node name="Kartoffel-Kürbiskernrösti" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 10.0238, 296.419 )
+position = Vector2( 0.501217, 157.661 )
 _name = "Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsalatvariation"
 _ingredients = [ "Milch", "Ei", "Senf", "Gluten", "Soja" ]
 _number = 4
 
 [node name="end_point" type="Node2D" parent="."]
-position = Vector2( 411.54, 279.968 )
+position = Vector2( 237.14, 251.332 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -48,14 +49,17 @@ __meta__ = {
 [node name="finished" type="Node2D" parent="end_point"]
 
 [node name="Queue" parent="end_point" instance=ExtResource( 4 )]
-speed = 100
 
 [node name="more_dishes" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 15.4893, -75.4089 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Frühlingsrolle" parent="more_dishes" instance=ExtResource( 3 )]
+_name = "Frühlingsrolle auf asiatischem Gemüse mit Mango-Chutney und scharfem Kokosreis"
+_ingredients = [ "Knoblauch", "Ei", "Soja", "Milch", "Gluten", "Senf" ]
+_number = 4
 
 [node name="Wurstgulasch" parent="more_dishes" instance=ExtResource( 3 )]
 _name = "Wurstgulasch mit Paprikastreifen, dazu Nudeln"
@@ -86,11 +90,6 @@ _number = 1
 _name = "Topfwurst mit buntem Sauerkraut und Salzkartoffeln"
 _ingredients = [ "Schweinefleisch", "Gluten" ]
 _number = 1
-
-[node name="Schweinenackenbraten" parent="more_dishes" instance=ExtResource( 3 )]
-_name = "Schweinenackenbraten mit Rosenkohl und Semmelknödeln"
-_ingredients = [ "Schweinefleisch", "Rosenkohl", "Gluten", "Ei", "Milch" ]
-_number = 2
 
 [node name="Seelachs" parent="more_dishes" instance=ExtResource( 3 )]
 _name = "Seelachs in Kräuter-Ei-Hülle auf Dänischer Senfsauce mit Tricolore-Gemüse und Kartoffelgratin"
@@ -151,4 +150,7 @@ _number = 3
 _name = "Älpler Maggerone mit Appenzeller Käse (Rohmilchkäse)überbacken, dazu Apfelmus und Tessiner Mischsalat"
 _ingredients = [ "Milch", "Gluten" ]
 _number = 4
+
+[node name="details" parent="." instance=ExtResource( 5 )]
+position = Vector2( 496.044, 36.744 )
 

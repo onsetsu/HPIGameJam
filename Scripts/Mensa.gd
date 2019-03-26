@@ -1,18 +1,37 @@
 extends Node2D
 
+var hungry_sheep
+
 func _ready():
-    pass # Replace with function body.
+    hide_details()
 
 func _process(delta):
     pass
 
 # show details
 # -------------------------------------------------------------------------
+func show_details(sheep):
+    $details.show()
+    $details.display_sheep(sheep)
+
+func hide_details():
+    $details.hide()
+
 func selected_sheep(sheep):
-    print('should show details')
+    hungry_sheep = sheep
+    show_details(sheep)
 
 func unselected_sheep(sheep):
-    print('hide details')
+    if hungry_sheep == sheep:
+        hungry_sheep = null
+        hide_details()
+
+# assign dish
+# -------------------------------------------------------------------------
+func select_dish(dish):
+    if not hungry_sheep:
+        return
+    hungry_sheep.assign_dish(dish)
 
 # queue end
 # -------------------------------------------------------------------------
@@ -32,7 +51,7 @@ func check(sheep):
     var dishes = current_dishes()
     if not sheep.assigned_dish:
         return failure(sheep)
-    _check(sheep, dishes[sheep.assigned_dish], dishes)
+    _check(sheep, dishes[sheep.assigned_dish - 1], dishes)
     
 func _check(sheep, dish, all_dishes):
     pass

@@ -10,3 +10,4 @@ margin_right = 61.0
 margin_bottom = 20.0
 text = "Essen 1"
 
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
