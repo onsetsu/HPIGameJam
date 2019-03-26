@@ -2,9 +2,7 @@ extends Node2D
 
 onready var Mensa = get_tree().get_root().get_node('Mensa')
 
-var hovered = false
 var assigned_dish
-var selected = false
 
 func _ready():
     pass
@@ -32,7 +30,6 @@ func _process(delta):
         if is_in_group('hovered'):
             remove_from_group('hovered')
     
-    var num_selected = group_size("selected")
     if is_in_group('hovered') && Input.is_action_just_pressed('click'):
         clear_select()
         add_to_group('selected')
@@ -55,5 +52,6 @@ func is_hovered():
     return pos.distance_to(mouse_pos) <= 150
 
 func end_reached():
-    queue_free()
-
+    unselect()
+    Mensa.check(self)
+    #queue_free()
