@@ -2,6 +2,7 @@ extends Node2D
 
 var happy_sheeps = 0
 var sad_sheeps = 0
+const lives = 3
 
 var hungry_sheep
 var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
@@ -33,9 +34,12 @@ func setup_dishes():
 
     $dishes.add_child(ulf)
 
-func _process(delta):
-    $points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps'
-    $points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
+func _process(delta): 
+	$points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps' 
+	$points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
+	if $end_point/Queue.is_empty():
+		get_tree().change_scene("res://Scenes/Success_End.tscn")
+        
 
 # show details
 # -------------------------------------------------------------------------
@@ -107,6 +111,8 @@ func success(sheep):
     print('What a happy sheep!')
 
 func failure(sheep):
-    sad_sheeps += 1
-    sheep.failure_anim()
-    print('Oh no! Your sheep died.')
+	sad_sheeps += 1
+	sheep.failure_anim()
+	print('Oh no! Your sheep died.')
+	if sad_sheeps >= lives:
+		get_tree().change_scene("res://Scenes/Failure_End.tscn")

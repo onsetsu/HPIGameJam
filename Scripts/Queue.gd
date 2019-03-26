@@ -47,3 +47,6 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	queue_start = true 
+	
+func is_empty():
+	return $path.get_children().empty()
