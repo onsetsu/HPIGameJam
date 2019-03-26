@@ -41,6 +41,11 @@ _name = "Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsa
 _ingredients = [ "Milch", "Ei", "Senf", "Gluten", "Soja" ]
 _number = 4
 
+[node name="Ulf's Café" parent="dishes" instance=ExtResource( 3 )]
+position = Vector2( -265.941, 68.0187 )
+_name = "Ulf's Café"
+_number = 5
+
 [node name="end_point" type="Node2D" parent="."]
 position = Vector2( 237.14, 251.332 )
 __meta__ = {
