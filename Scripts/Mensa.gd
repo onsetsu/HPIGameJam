@@ -1,5 +1,8 @@
 extends Node2D
 
+var happy_sheeps = 0
+var sad_sheeps = 0
+
 var hungry_sheep
 var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
 
@@ -31,7 +34,8 @@ func setup_dishes():
     $dishes.add_child(ulf)
 
 func _process(delta):
-    pass
+    $points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps'
+    $points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
 
 # show details
 # -------------------------------------------------------------------------
@@ -98,9 +102,11 @@ func _dish_suitable(sheep, dish):
 	return true
 
 func success(sheep):
+    happy_sheeps += 1
     sheep.success_anim()
     print('What a happy sheep!')
 
 func failure(sheep):
+    sad_sheeps += 1
     sheep.failure_anim()
     print('Oh no! Your sheep died.')

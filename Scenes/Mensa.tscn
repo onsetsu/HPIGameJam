@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Mensa.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Mensaschafe_klein.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Dish.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Queue.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Sheep_Details.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/Kopf_weiss.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Körper_orange.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Kopf_schwarz.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Körper_gruen.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Dish.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Queue.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Sheep_Details.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
 
 [node name="Mensa" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,11 +23,61 @@ position = Vector2( 510, 321.915 )
 scale = Vector2( 0.550162, 0.499426 )
 texture = ExtResource( 2 )
 
+[node name="points" type="Node2D" parent="."]
+
+[node name="happy_sheeps" type="Label" parent="points"]
+margin_left = 108.893
+margin_top = 29.4892
+margin_right = 296.893
+margin_bottom = 68.4892
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.364706, 0.721569, 0.203922, 1 )
+text = "X Happy Sheeps"
+
+[node name="sad_sheeps" type="Label" parent="points"]
+margin_left = 108.893
+margin_top = 97.9103
+margin_right = 292.893
+margin_bottom = 136.91
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.721569, 0.372549, 0.203922, 1 )
+text = "X Sad Sheeps"
+
+[node name="happy" type="Node2D" parent="points"]
+editor/display_folded = true
+position = Vector2( 60.7044, 37.9531 )
+rotation = 0.284019
+scale = Vector2( 0.017, 0.017 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="points/happy"]
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="points/happy"]
+texture = ExtResource( 5 )
+
+[node name="sad" type="Node2D" parent="points"]
+editor/display_folded = true
+position = Vector2( 59.8251, 116.871 )
+scale = Vector2( 0.02, 0.005 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="points/sad"]
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="points/sad"]
+texture = ExtResource( 7 )
+
 [node name="dishes" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 314.366, 50.692 )
 
-[node name="Ulf's Café" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( -265.941, 68.0187 )
+[node name="Ulf's Café" parent="dishes" instance=ExtResource( 8 )]
+position = Vector2( -265.084, 171.761 )
 _name = "Ulf's Café"
 _number = 5
 
@@ -30,7 +89,7 @@ __meta__ = {
 
 [node name="finished" type="Node2D" parent="end_point"]
 
-[node name="Queue" parent="end_point" instance=ExtResource( 4 )]
+[node name="Queue" parent="end_point" instance=ExtResource( 9 )]
 
 [node name="more_dishes" type="Node2D" parent="."]
 position = Vector2( 15.4893, -75.4089 )
@@ -38,121 +97,121 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Tofugulasch" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Tofugulasch" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Tofugulasch mit Paprikastreifen, dazu Nudeln"
 _ingredients = [ "Gluten", "Soja" ]
 _number = 1
 
-[node name="Schweinenackenbraten" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Schweinenackenbraten" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Schweinenackenbraten mit Rosenkohl und Semmelknödeln"
 _ingredients = [ "Schweinefleisch", "Rosenkohl", "Gluten", "Ei", "Milch" ]
 _number = 2
 
-[node name="Schweinesteak" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Schweinesteak" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi"
 _ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Ei", "Pilze" ]
 _number = 3
 
-[node name="Kartoffel-Kürbiskernrösti" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Kartoffel-Kürbiskernrösti" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsalatvariation"
 _ingredients = [ "Milch", "Ei", "Senf", "Gluten", "Soja" ]
 _number = 4
 
-[node name="Frühlingsrolle" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Frühlingsrolle" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Frühlingsrolle auf asiatischem Gemüse mit Mango-Chutney und scharfem Kokosreis"
 _ingredients = [ "Knoblauch", "Ei", "Soja", "Milch", "Gluten", "Senf" ]
 _number = 4
 
-[node name="Wurstgulasch" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Wurstgulasch" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Wurstgulasch mit Paprikastreifen, dazu Nudeln"
 _ingredients = [ "Gluten", "Soja", "Schweinefleisch" ]
 _number = 1
 
-[node name="Hähnchengeschnetzeltes" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Hähnchengeschnetzeltes" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Hähnchengeschnetzeltes Züricher Art, dazu junge Erbsen und Röstiecken"
 _ingredients = [ "Milch", "Geflügel", "Alkohol" ]
 _number = 2
 
-[node name="Matjesfilets" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Matjesfilets" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Matjesfilets mit Dillschmand, dazu Bratkartoffeln und Gurkensalat"
 _ingredients = [ "Fisch", "Schweinefleisch", "Milch" ]
 _number = 3
 
-[node name="Süßkartoffel-Curry" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Süßkartoffel-Curry" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Süßkartoffel-Curry mit Kichererbsen und Blattspinat, dazu Basmatireis"
 _ingredients = [ "Knoblauch", "Curry", "Erdnüsse", "Soja" ]
 _number = 4
 
-[node name="Gemüseeintopf" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Gemüseeintopf" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Gemüseeintopf mit Kichererbsen, dazu Brot"
 _ingredients = [ "Gluten", "Knoblauch", "Pilze" ]
 _number = 1
 
-[node name="Topfwurst" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Topfwurst" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Topfwurst mit buntem Sauerkraut und Salzkartoffeln"
 _ingredients = [ "Schweinefleisch", "Gluten" ]
 _number = 1
 
-[node name="Seelachs" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Seelachs" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Seelachs in Kräuter-Ei-Hülle auf Dänischer Senfsauce mit Tricolore-Gemüse und Kartoffelgratin"
 _ingredients = [ "Fisch", "Ei", "Senf", "Milch", "Gluten" ]
 _number = 3
 
-[node name="Hefeklöße" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Hefeklöße" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Hefeklöße mit Waldbeeren oder Zimtpflaumen"
 _ingredients = [ "Ei", "Milch", "Gluten" ]
 _number = 1
 
-[node name="Hering" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Hering" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Hering nach Hausfrauen Art mit Salzkartoffeln und Gurkensalat"
 _ingredients = [ "Fisch", "Ei", "Milch", "Senf" ]
 _number = 2
 
-[node name="Gelbe Linsen" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Gelbe Linsen" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Gelbe Linsen mit Kokos-Curry und Bananen-Soja-Shake"
 _ingredients = [ "Soja", "Knoblauch", "Curry" ]
 _number = 4
 
-[node name="Spaghetti" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Spaghetti" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Spaghetti mit Florentiner Sauce"
 _ingredients = [ "Knoblauch", "Gluten", "Soja" ]
 _number = 1
 
-[node name="Vegetarische Klopse" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Vegetarische Klopse" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Vegetarische Klopse mit Möhrengemüse und Salzkartoffeln"
 _ingredients = [ "Ei", "Soja", "Gluten", "Pilze" ]
 _number = 2
 
-[node name="Königsberger Klopse" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Königsberger Klopse" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Königsberger Klopse mit Möhrengemüse und Langkornreis"
 _ingredients = [ "Schweinefleisch", "Rindfleisch", "Gluten", "Ei", "Senf", "Fisch" ]
 _number = 2
 
-[node name="Fangfrisches Fischfilet" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Fangfrisches Fischfilet" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Fangfrisches Fischfilet mit Orangen-Pfeffersauce und Fenchel-Tomaten-Gemüse, dazu Bandnudeln"
 _ingredients = [ "Fisch", "Gluten", "Milch", "Ei", "Alkohol" ]
 _number = 3
 
-[node name="Brühnudeln" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Brühnudeln" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Brühnudeln mit Wurzelgemüse und Sojawürfeln, dazu Brot"
 _ingredients = [ "Gluten", "Soja", "Pilze" ]
 _number = 1
 
-[node name="Hähnchenbruststreifen" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Hähnchenbruststreifen" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Hähnchenbruststreifen in Honig-Senf-Sauce mit Mandel-Kartoffeln, dazu Salatmix mit Mandarinen-Joghurt-Dressing"
 _ingredients = [ "Senf", "Milch", "Erdnüsse", "Geflügel" ]
 _number = 2
 
-[node name="Gulasch" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Gulasch" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Gulasch mit Rosenkohl und Semmelknödeln oder Spätzle"
 _ingredients = [ "Schweinefleisch", "Rindfleisch", "Knoblauch", "Alkohol", "Gluten", "Ei", "Milch", "Rosenkohl" ]
 _number = 3
 
-[node name="Älpler Maggerone" parent="more_dishes" instance=ExtResource( 3 )]
+[node name="Älpler Maggerone" parent="more_dishes" instance=ExtResource( 8 )]
 _name = "Älpler Maggerone mit Appenzeller Käse (Rohmilchkäse)überbacken, dazu Apfelmus und Tessiner Mischsalat"
 _ingredients = [ "Milch", "Gluten" ]
 _number = 4
 
-[node name="details" parent="." instance=ExtResource( 5 )]
+[node name="details" parent="." instance=ExtResource( 10 )]
 position = Vector2( 496.044, 36.744 )
 
