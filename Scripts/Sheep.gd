@@ -52,5 +52,6 @@ func is_hovered():
     return pos.distance_to(mouse_pos) <= 150
 
 func end_reached():
-    queue_free()
-
+    unselect()
+    Mensa.check(self)
+    #queue_free()

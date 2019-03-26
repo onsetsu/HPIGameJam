@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/Sheep.gd" type="Script" id=1]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 41.1504
-height = 81.3989
 
 [node name="Sheep" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,17 +18,11 @@ margin_top = -41.8
 margin_right = 30.5
 margin_bottom = -1.79999
 rect_scale = Vector2( 0.542294, 0.542294 )
-color = Color( 0.980392, 0.666667, 0.0666667, 1 )
+color = Color( 0.964706, 0.819608, 0.537255, 1 )
 
 [node name="assigned_dish" type="Label" parent="."]
 margin_left = 37.0501
 margin_top = -65.5501
 margin_right = 77.0501
 margin_bottom = -51.5501
-
-[node name="area" type="Area2D" parent="."]
-space_override = 1
-
-[node name="collision" type="CollisionShape2D" parent="area"]
-shape = SubResource( 1 )
 

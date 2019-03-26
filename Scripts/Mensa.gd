@@ -1,19 +1,44 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+func _process(delta):
+    pass
 
+# show details
+# -------------------------------------------------------------------------
 func selected_sheep(sheep):
-    print('new sheep')
+    print('should show details')
 
 func unselected_sheep(sheep):
-    print('no')
+    print('hide details')
+
+# queue end
+# -------------------------------------------------------------------------
+func reparent_finished_person(person):
+    var former_parent = person.get_parent()
+    if former_parent:
+        former_parent.remove_child(person)
+    $end_point/finished.add_child(person)
+    person.position = Vector2(0, 0)
+
+# check suitability
+# -------------------------------------------------------------------------
+func current_dishes():
+    return $dishes.get_children()
+
+func check(sheep):
+    var dishes = current_dishes()
+    if not sheep.assigned_dish:
+        return failure(sheep)
+    _check(sheep, dishes[sheep.assigned_dish], dishes)
+    
+func _check(sheep, dish, all_dishes):
+    pass
+
+func success(sheep):
+    print('What a happy sheep!')
+
+func failure(sheep):
+    print('Oh no! Your sheep died.')
