@@ -15,17 +15,17 @@ func _ready():
 func display(sheep):
     # FUR
     if sheep.fur_color != sheep.FUR_COLOR.green:
-        $fur/green.hide()
+        $body/fur/green.hide()
     else:
-        $fur/green.show()
+        $body/fur/green.show()
     if sheep.fur_color != sheep.FUR_COLOR.blue:
-        $fur/blue.hide()
+        $body/fur/blue.hide()
     else:
-        $fur/blue.show()
+        $body/fur/blue.show()
     if sheep.fur_color != sheep.FUR_COLOR.orange:
-        $fur/orange.hide()
+        $body/fur/orange.hide()
     else:
-        $fur/orange.show()
+        $body/fur/orange.show()
 
     # HEAD
     if sheep.head_color != sheep.HEAD_COLOR.white:
@@ -43,18 +43,18 @@ func display(sheep):
 
     # PATTERN
     if sheep.pattern_type != sheep.PATTERN.checkers:
-        $pattern/checkers.hide()
+        $body/pattern/checkers.hide()
     else:
-        $pattern/checkers.show()
+        $body/pattern/checkers.show()
     if sheep.pattern_type != sheep.PATTERN.dots:
-        $pattern/dots.hide()
+        $body/pattern/dots.hide()
     else:
-        $pattern/dots.show()
+        $body/pattern/dots.show()
     if sheep.pattern_type != sheep.PATTERN.stripes:
-        $pattern/stripes.hide()
+        $body/pattern/stripes.hide()
     else:
-        $pattern/stripes.show()
+        $body/pattern/stripes.show()
     if sheep.pattern_type != sheep.PATTERN.none:
-        $pattern/none.hide()
+        $body/pattern/none.hide()
     else:
-        $pattern/none.show()
+        $body/pattern/none.show()
