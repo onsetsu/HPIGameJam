@@ -35,9 +35,11 @@ texture = ExtResource( 7 )
 
 [node name="pattern" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="pattern"]
+[node name="checkers" type="Sprite" parent="pattern"]
 
-[node name="Sprite2" type="Sprite" parent="pattern"]
+[node name="dots" type="Sprite" parent="pattern"]
 
-[node name="Sprite3" type="Sprite" parent="pattern"]
+[node name="stripes" type="Sprite" parent="pattern"]
+
+[node name="none" type="Sprite" parent="pattern"]
 

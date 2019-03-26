@@ -10,7 +10,7 @@ enum FUR_COLOR{
 	blue,
 	orange
 }
-var fur_color
+var fur_color = FUR_COLOR.green
 
 enum PATTERN{
 	checkers,
@@ -34,6 +34,8 @@ func set_appearance(head, fur, pattern):
     head_color = head
     fur_color = fur
     pattern_type = pattern
+    
+    $graphic.display(self)
 
 func group_size(name):
     return get_tree().get_nodes_in_group(name).size()

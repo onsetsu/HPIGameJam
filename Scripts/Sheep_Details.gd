@@ -13,4 +13,4 @@ func _ready():
 #    pass
 
 func display_sheep(sheep):
-    pass
+    find_node('graphic').display(sheep)
