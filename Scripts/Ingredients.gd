@@ -26,7 +26,7 @@ static func can_be_eaten(sheep, ingredient):
 			print("Das Schaffell war " + str(fc) + " und das Muster war " + str(pt) + ", es isst also kein " + str(ingredient) + "!!!")
 			return false
 	elif ingredient == "Schweinefleisch":
-		if fc==e_fc.blue and ((pt==e_pt.checkers and hc==e_hc.pink) or pt==e_hc.dots):
+		if fc==e_fc.blue and ((pt==e_pt.checkers and hc==e_hc.pink) or pt==e_pt.dots):
 			print("Das Schaffell war " + str(fc) + " und das Muster war " + str(pt) + ", es isst also kein " + str(ingredient) + "!!!")
 			return false
 	elif ingredient == "Fisch":
