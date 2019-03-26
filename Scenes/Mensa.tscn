@@ -17,29 +17,6 @@ texture = ExtResource( 2 )
 [node name="dishes" type="Node2D" parent="."]
 position = Vector2( 314.366, 50.692 )
 
-[node name="Tofugulasch" parent="dishes" instance=ExtResource( 3 )]
-_name = "Tofugulasch mit Paprikastreifen, dazu Nudeln"
-_ingredients = [ "Gluten", "Soja" ]
-_number = 1
-
-[node name="Schweinenackenbraten" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 0, 53.3404 )
-_name = "Schweinenackenbraten mit Rosenkohl und Semmelknödeln"
-_ingredients = [ "Schweinefleisch", "Rosenkohl", "Gluten", "Ei", "Milch" ]
-_number = 2
-
-[node name="Schweinesteak" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 0.0714674, 104.963 )
-_name = "Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi"
-_ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Ei", "Pilze" ]
-_number = 3
-
-[node name="Kartoffel-Kürbiskernrösti" parent="dishes" instance=ExtResource( 3 )]
-position = Vector2( 0.501217, 157.661 )
-_name = "Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsalatvariation"
-_ingredients = [ "Milch", "Ei", "Senf", "Gluten", "Soja" ]
-_number = 4
-
 [node name="Ulf's Café" parent="dishes" instance=ExtResource( 3 )]
 position = Vector2( -265.941, 68.0187 )
 _name = "Ulf's Café"
@@ -60,6 +37,26 @@ position = Vector2( 15.4893, -75.4089 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Tofugulasch" parent="more_dishes" instance=ExtResource( 3 )]
+_name = "Tofugulasch mit Paprikastreifen, dazu Nudeln"
+_ingredients = [ "Gluten", "Soja" ]
+_number = 1
+
+[node name="Schweinenackenbraten" parent="more_dishes" instance=ExtResource( 3 )]
+_name = "Schweinenackenbraten mit Rosenkohl und Semmelknödeln"
+_ingredients = [ "Schweinefleisch", "Rosenkohl", "Gluten", "Ei", "Milch" ]
+_number = 2
+
+[node name="Schweinesteak" parent="more_dishes" instance=ExtResource( 3 )]
+_name = "Schweinesteak mit zerlassener Thymianbutter und Peperonata, dazu Kartoffelgnocchi"
+_ingredients = [ "Schweinefleisch", "Milch", "Gluten", "Ei", "Pilze" ]
+_number = 3
+
+[node name="Kartoffel-Kürbiskernrösti" parent="more_dishes" instance=ExtResource( 3 )]
+_name = "Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauchquark, dazu Blattsalatvariation"
+_ingredients = [ "Milch", "Ei", "Senf", "Gluten", "Soja" ]
+_number = 4
 
 [node name="Frühlingsrolle" parent="more_dishes" instance=ExtResource( 3 )]
 _name = "Frühlingsrolle auf asiatischem Gemüse mit Mango-Chutney und scharfem Kokosreis"

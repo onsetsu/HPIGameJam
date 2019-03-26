@@ -4,7 +4,31 @@ var hungry_sheep
 var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
 
 func _ready():
+    setup_dishes()
     hide_details()
+
+func setup_dishes():
+    var all_dishes = $more_dishes.get_children().duplicate()
+    all_dishes.shuffle()
+    
+    var selected_dishes = [false, false, false, false]
+    for dish in all_dishes:
+        if not selected_dishes[dish._number - 1]:
+            selected_dishes[dish._number - 1] = dish
+            print('selected a dish')
+    
+    var ulf = $dishes.get_children()[0]
+    $dishes.remove_child(ulf)
+
+    var offset = Vector2(0, 50)
+    var i = 0  
+    for dish in selected_dishes:
+        dish.get_parent().remove_child(dish)
+        $dishes.add_child(dish)
+        dish.position = offset * i
+        i += 1
+
+    $dishes.add_child(ulf)
 
 func _process(delta):
     pass
