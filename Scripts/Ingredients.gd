@@ -8,7 +8,7 @@ func _ready():
 	print(_can_be_eaten(sh, "Rindfleisch"))
 	
 
-func _can_be_eaten(sheep, ingredient):
+static func can_be_eaten(sheep, ingredient):
 	var fc = sheep.fur_color
 	var e_fc = sheep.FUR_COLOR
 	var pt = sheep.pattern
