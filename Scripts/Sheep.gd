@@ -92,7 +92,8 @@ func clear_select():
         sheep.unselect()
 
 func unselect():
-    remove_from_group('selected')
+    if is_in_group('selected'):
+        remove_from_group('selected')
     Mensa.unselected_sheep(self)
 
 func is_hovered():

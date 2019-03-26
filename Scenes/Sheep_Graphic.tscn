@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Sheep_Graphic.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Körper_blau.png" type="Texture" id=2]
@@ -73,6 +73,46 @@ tracks/4/keys = {
 "values": [ Vector2( 1.1, 1 ), Vector2( 1, 1.09982 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "success"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -21.7323, 90.1254 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -0.009228 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.09528, 1.00471 ) ]
+}
+
 [node name="Sheep_Graphic" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -132,7 +172,8 @@ texture = ExtResource( 6 )
 [node name="white" type="Sprite" parent="head"]
 texture = ExtResource( 7 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim_player" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 1 )
+anims/success = SubResource( 2 )
 

@@ -46,7 +46,7 @@ _name = "Ulf's Café"
 _number = 5
 
 [node name="end_point" type="Node2D" parent="."]
-position = Vector2( 237.14, 251.332 )
+position = Vector2( 219.872, 255.649 )
 __meta__ = {
 "_edit_group_": true
 }
