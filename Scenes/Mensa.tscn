@@ -28,7 +28,6 @@ scale = Vector2( 0.556237, 0.504941 )
 texture = ExtResource( 2 )
 
 [node name="points" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="happy_sheeps" type="Label" parent="points"]
 margin_left = 108.893
@@ -37,7 +36,7 @@ margin_right = 296.893
 margin_bottom = 68.4892
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.364706, 0.721569, 0.203922, 1 )
-text = "X Happy Sheeps"
+text = "X Happy Sheep"
 
 [node name="sad_sheeps" type="Label" parent="points"]
 margin_left = 108.893
@@ -46,7 +45,7 @@ margin_right = 292.893
 margin_bottom = 136.91
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.721569, 0.372549, 0.203922, 1 )
-text = "X Sad Sheeps"
+text = "X Sad Sheep"
 
 [node name="happy" type="Node2D" parent="points"]
 editor/display_folded = true
@@ -94,6 +93,7 @@ __meta__ = {
 [node name="finished" type="Node2D" parent="end_point"]
 
 [node name="Queue" parent="end_point" instance=ExtResource( 9 )]
+speed = 15
 
 [node name="more_dishes" type="Node2D" parent="."]
 editor/display_folded = true
@@ -230,6 +230,7 @@ scale = Vector2( 20, 20 )
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( 21, 13.5 )
 shape = SubResource( 2 )
 
