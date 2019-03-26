@@ -1,6 +1,7 @@
 extends Node2D
 
 var hungry_sheep
+var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
 
 func _ready():
     hide_details()
@@ -54,7 +55,11 @@ func check(sheep):
     _check(sheep, dishes[sheep.assigned_dish - 1], dishes)
     
 func _check(sheep, dish, all_dishes):
-    pass
+	for ingredient in dish._ingredients:
+		if not ingredients_scene.can_be_eaten(sheep, ingredient):
+			failure(sheep)
+			return
+	success(sheep)
 
 func success(sheep):
     print('What a happy sheep!')
