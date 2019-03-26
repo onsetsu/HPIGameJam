@@ -2,6 +2,7 @@ extends Node2D
 
 var happy_sheeps = 0
 var sad_sheeps = 0
+const lives = 3
 
 var hungry_sheep
 var ingredients_scene = preload("res://Scripts/Ingredients.gd") 
@@ -12,6 +13,9 @@ func _ready():
 
 func setup_dishes():
     var all_dishes = $more_dishes.get_children().duplicate()
+    for dish in all_dishes:
+        print(dish._ingredients.size())
+        dish.print_ingredients()
     all_dishes.shuffle()
     
     var selected_dishes = [false, false, false, false]
@@ -23,7 +27,7 @@ func setup_dishes():
     var ulf = $dishes.get_children()[0]
     $dishes.remove_child(ulf)
 
-    var offset = Vector2(0, 50)
+    var offset = Vector2(0, 110)
     var i = 0  
     for dish in selected_dishes:
         dish.get_parent().remove_child(dish)
@@ -33,9 +37,20 @@ func setup_dishes():
 
     $dishes.add_child(ulf)
 
-func _process(delta):
-    $points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps'
-    $points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
+func _process(delta): 
+	$points/happy_sheeps.text = str(happy_sheeps) + ' Happy Sheeps' 
+	$points/sad_sheeps.text = str(sad_sheeps) + ' Sad Sheeps'
+	if $end_point/Queue.is_empty():
+		get_tree().change_scene("res://Scenes/Success_End.tscn")
+
+# sheep events
+# ------------------------------------------------------------------------
+
+func clicked_on_sheep(sheep):
+	selected_sheep(sheep)
+
+func hovering_over_sheep(sheep):
+	pass
 
 # show details
 # -------------------------------------------------------------------------
@@ -107,6 +122,8 @@ func success(sheep):
     print('What a happy sheep!')
 
 func failure(sheep):
-    sad_sheeps += 1
-    sheep.failure_anim()
-    print('Oh no! Your sheep died.')
+	sad_sheeps += 1
+	sheep.failure_anim()
+	print('Oh no! Your sheep died.')
+	if sad_sheeps >= lives:
+		get_tree().change_scene("res://Scenes/Failure_End.tscn")

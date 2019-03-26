@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Failure_End.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Mensaschafe_klein.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/font30.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/font20.tres" type="DynamicFont" id=4]
+
+[node name="end_screen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 515.632, 325.784 )
+scale = Vector2( 0.555, 0.505 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 573.29
+margin_top = 47.0052
+margin_right = 829.29
+margin_bottom = 176.005
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You won! "
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 702.854
+margin_top = 175.221
+margin_right = 871.854
+margin_bottom = 246.221
+custom_fonts/font = ExtResource( 4 )
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
