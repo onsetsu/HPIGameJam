@@ -3,15 +3,13 @@ extends Node
 var sheep_scene = preload("res://Scenes/Sheep.tscn")
 
 func _ready():
-	var sh = sheep_scene.instance()
-	sh.fur_color = sh.FUR_COLOR.blue
-	print(_can_be_eaten(sh, "Rindfleisch"))
+	pass
 	
 
 static func can_be_eaten(sheep, ingredient):
 	var fc = sheep.fur_color
 	var e_fc = sheep.FUR_COLOR
-	var pt = sheep.pattern
+	var pt = sheep.pattern_type
 	var e_pt = sheep.PATTERN
 	var hc = sheep.head_color
 	var e_hc = sheep.HEAD_COLOR
