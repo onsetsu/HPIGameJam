@@ -74,7 +74,9 @@ func _dish_suitable(sheep, dish):
 	return true
 
 func success(sheep):
+    sheep.success_anim()
     print('What a happy sheep!')
 
 func failure(sheep):
+    sheep.failure_anim()
     print('Oh no! Your sheep died.')
