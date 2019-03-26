@@ -18,6 +18,9 @@ func spawn_wave():
         var entity
         if i % 5 == 0:
             entity = sheep_scene.instance()
+            #entity.set_appearance(entity.HEAD_COLOR.pink, entity.FUR_COLOR.green, entity.PATTERN.none)
+            randomize()
+            entity.randomize_appearance()
         else:
             entity = person_scene.instance()
 

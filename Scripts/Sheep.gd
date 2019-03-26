@@ -10,7 +10,7 @@ enum FUR_COLOR{
 	blue,
 	orange
 }
-var fur_color
+var fur_color = FUR_COLOR.green
 
 enum PATTERN{
 	checkers,
@@ -30,10 +30,23 @@ var head_color
 func _ready():
     pass
 
+func randomize_appearance():
+    var fur = FUR_COLOR.values()
+    fur.shuffle()
+    var head = HEAD_COLOR.values()
+    head.shuffle()
+    var pattern = PATTERN.values()
+    pattern.shuffle()
+    set_appearance(head[0], fur[0], pattern[0])
+
 func set_appearance(head, fur, pattern):
+    print()
+
     head_color = head
     fur_color = fur
     pattern_type = pattern
+    
+    $graphic.display(self)
 
 func group_size(name):
     return get_tree().get_nodes_in_group(name).size()

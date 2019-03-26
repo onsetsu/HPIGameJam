@@ -4,6 +4,7 @@ var sheep_scene = preload("res://Scenes/Sheep.tscn")
 
 func _ready():
 	pass
+	
 
 static func can_be_eaten(sheep, ingredient):
 	var fc = sheep.fur_color
